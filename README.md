@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Management Tool
 
 A full-stack Trello/Asana-style project management app with JWT auth, MongoDB persistence, drag-and-drop boards, Socket.io real-time updates, project membership, task comments, live presence, notifications, and due-date reminders.
@@ -91,3 +92,7 @@ REST remains the source of truth. The client uses optimistic UI for drag-and-dro
 - `POST /api/tasks/:id/comments`
 - `GET /api/notifications`
 - `PUT /api/notifications/read-all`
+=======
+# Project-Management-Tool
+Build a full-stack, real-time collaborative project management tool (Trello/Asana-style) — not a static kanban demo, but one with real auth, persistent data, live multi-user sync via WebSockets, and notifications.
+>>>>>>> 39c5c733ab7358dffdc2a394bdbcb2fcfb654e47
