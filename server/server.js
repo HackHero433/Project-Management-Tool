@@ -24,14 +24,22 @@ const server = http.createServer(app);
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
 const io = new Server(server, {
   cors: {
-    origin: clientUrl,
-    credentials: true
-  }
+    origin: true,
+    credentials: true,
+  },
 });
 
-app.set('io', io);
+app.set("io", io);
 app.use(helmet());
-app.use(cors({ origin: clientUrl, credentials: true }));
+
+app.use(cors({
+  origin: true,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
+app.options("*", cors());
 app.use(express.json({ limit: '2mb' }));
 app.use(cookieParser());
 app.use(morgan('dev'));
